@@ -18,6 +18,7 @@ public class foodVisibility : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             currentIndex++;
+            DesactiveAll();
             if (currentIndex < food.Length)
             {
                 ActivateByIndex(currentIndex);
@@ -33,15 +34,16 @@ public class foodVisibility : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             currentIndex--;
+            DesactiveAll();
             if (currentIndex > -1)
             {
-                DesactivateByIndex(currentIndex);
+                ActivateByIndex(currentIndex);
 
             }
             else
             {
                 currentIndex = food.Length;
-                ActiveAll();
+                DesactiveAll();
                 ActivateByIndex(currentIndex);
             }
         }
